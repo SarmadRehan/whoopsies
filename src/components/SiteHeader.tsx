@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { bar, hours, phoneHref } from "@/data/bar";
 
 import { Logo } from "./Logo";
+import { OrderButton } from "./OrderDialog";
 
 const navLinks = [
   { href: "#tonight", label: "Tonight" },
@@ -46,13 +47,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <span className="font-type text-sm text-mist">{hours.time}</span>
-          <a
-            href={phoneHref(bar.phone)}
-            className="rounded-full border border-cobalt/50 px-4 py-2 font-bold text-sky transition-colors hover:bg-cobalt hover:text-white"
-          >
+          <span className="hidden font-type text-sm text-mist xl:inline">{hours.time}</span>
+          <a href={phoneHref(bar.phone)} className="font-bold text-sky transition-colors hover:text-snow">
             {bar.phone}
           </a>
+          <OrderButton className="rounded-full bg-cobalt px-5 py-2.5 font-bold text-white transition-colors hover:bg-cobalt-dark">
+            Order Now
+          </OrderButton>
         </div>
 
         <button

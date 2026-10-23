@@ -35,7 +35,7 @@ guest sees the same menu.
 src/
   app/            layout, page, global styles (palette, lamp glow, film grain), icons
   assets/images/  logo and photos, imported statically
-  components/     one component per page section, plus the Tonight's menu editor dialog
+  components/     one component per page section, plus the menu editor and order dialogs
   data/           bar.ts: contact details, hours, house notes, menu slots, example specials
   lib/            tonightStorage.ts: validates and stores the demo menu in the browser
 ```
@@ -101,6 +101,8 @@ renamed, update the base path in the `deploy` script.
 - Colors are Whoopsie's brand colors only, sampled from their logo: navy `#000030`, cobalt
   `#0070D0` and white, plus tints of them (`src/app/globals.css`). The logo cobalt is used for fills
   with white text; small text on navy uses a lighter cobalt tint to meet WCAG AA contrast.
+- Online ordering isn't part of the prototype. Every "Order Now" button (header, hero, mobile bar)
+  opens a "coming soon" dialog (`src/components/OrderDialog.tsx`) with a call button instead.
 - The page is marked `noindex` so the demo never competes with the bar's own listings.
 - The weekday above Tonight's menu and the "Updated" time use Atlanta time (`America/New_York`),
   not the visitor's clock.

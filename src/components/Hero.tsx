@@ -2,6 +2,8 @@ import Image from "next/image";
 
 import { bar, heroImage, hoursSummary } from "@/data/bar";
 
+import { OrderButton } from "./OrderDialog";
+
 export function Hero() {
   return (
     <section id="top" aria-labelledby="hero-title" className="bg-lamp relative overflow-hidden">
@@ -20,10 +22,13 @@ export function Hero() {
             {hoursSummary}
           </p>
 
-          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+          <div className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
+            <OrderButton className="w-full rounded-full bg-cobalt px-7 py-3.5 text-lg font-bold text-white transition-colors hover:bg-cobalt-dark sm:w-auto">
+              Order Now
+            </OrderButton>
             <a
               href="#tonight"
-              className="w-full rounded-full bg-cobalt px-7 py-3.5 text-center text-lg font-bold text-white transition-colors hover:bg-cobalt-dark sm:w-auto"
+              className="w-full rounded-full border border-snow/30 px-7 py-3.5 text-center text-lg font-bold transition-colors hover:border-snow sm:w-auto"
             >
               See tonight&apos;s menu
             </a>
