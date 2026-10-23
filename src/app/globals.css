@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* A dim cocktail den: near-black wood, cream menu card, brass lamp light, plus the cobalt from
+   the Whoopsie's logo for small accents. */
+@theme {
+  --color-night: #120c09;
+  --color-booth: #1c140f;
+  --color-oak: #2b1f17;
+  --color-cream: #f3e7cd;
+  --color-parchment: #c9b795;
+  --color-brass: #d9a648;
+  --color-brass-dark: #b8862e;
+  --color-ember: #e0765a;
+  --color-cobalt: #4f9be6;
+}
+
+/* `inline` so utilities reference the next/font variables directly rather than resolving them on :root. */
+@theme inline {
+  --font-display: var(--font-dm-serif), ui-serif, Georgia, serif;
+  --font-type: var(--font-courier), ui-monospace, "Courier New", monospace;
+  --font-sans: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-night);
+  color: var(--color-cream);
+}
+
+/* Lamp glow: a warm pool of light at the top of a section, fading into the dark. */
+.bg-lamp {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 0%, rgb(217 166 72 / 0.16), transparent 70%),
+    var(--color-night);
+}
+
+/* Film grain over the photos so they sit in the room instead of on top of it. */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Double rule with a diamond, like the border on an old menu card. */
+.deco-rule {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-brass);
+}
+.deco-rule::before,
+.deco-rule::after {
+  content: "";
+  flex: 1;
+  height: 5px;
+  border-block: 1px solid currentColor;
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
