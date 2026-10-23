@@ -91,6 +91,9 @@ renamed, update the base path in the `deploy` script.
 
 ## Notes
 
+- Colors are Whoopsie's brand colors only, sampled from their logo: navy `#000030`, cobalt
+  `#0070D0` and white, plus tints of them (`src/app/globals.css`). The logo cobalt is used for fills
+  with white text; small text on navy uses a lighter cobalt tint to meet WCAG AA contrast.
 - The page is marked `noindex` so the demo never competes with the bar's own listings.
 - The weekday above Tonight's menu and the "Updated" time use Atlanta time (`America/New_York`),
   not the visitor's clock.

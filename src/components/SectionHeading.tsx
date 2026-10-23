@@ -14,7 +14,7 @@ export function SectionHeading({ eyebrow, title, intro, id }: SectionHeadingProp
       <h2 id={id} className="mt-4 font-display text-4xl text-balance sm:text-5xl">
         {title}
       </h2>
-      {intro && <p className="mt-4 text-lg leading-relaxed text-parchment">{intro}</p>}
+      {intro && <p className="mt-4 text-lg leading-relaxed text-mist">{intro}</p>}
     </div>
   );
 }

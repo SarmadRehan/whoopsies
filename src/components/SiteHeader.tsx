@@ -26,7 +26,7 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-cream/10 bg-night/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-snow/10 bg-navy/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <a href="#top" className="flex shrink-0 items-center gap-3" aria-label="Whoopsie's, back to top">
           <Logo className="w-10" priority />
@@ -37,7 +37,7 @@ export function SiteHeader() {
           <ul className="flex items-center gap-7 font-type text-sm uppercase tracking-[0.2em]">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="transition-colors hover:text-brass">
+                <a href={link.href} className="transition-colors hover:text-sky">
                   {link.label}
                 </a>
               </li>
@@ -46,10 +46,10 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-4 lg:flex">
-          <span className="font-type text-sm text-parchment">{hours.time}</span>
+          <span className="font-type text-sm text-mist">{hours.time}</span>
           <a
             href={phoneHref(bar.phone)}
-            className="rounded-full border border-brass/50 px-4 py-2 font-bold text-brass transition-colors hover:bg-brass hover:text-night"
+            className="rounded-full border border-cobalt/50 px-4 py-2 font-bold text-sky transition-colors hover:bg-cobalt hover:text-white"
           >
             {bar.phone}
           </a>
@@ -57,7 +57,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded-full border border-cream/20 md:hidden"
+          className="inline-flex size-11 items-center justify-center rounded-full border border-snow/20 md:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -70,7 +70,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-cream/10 bg-night md:hidden">
+        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-snow/10 bg-navy md:hidden">
           <ul className="flex flex-col px-4 py-2 font-type text-base uppercase tracking-[0.2em]">
             {navLinks.map((link) => (
               <li key={link.href}>

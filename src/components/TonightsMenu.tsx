@@ -44,10 +44,10 @@ export function TonightsMenu() {
   }
 
   return (
-    <section id="tonight" aria-labelledby="tonight-title" className="border-t border-cream/10 py-20 sm:py-24">
+    <section id="tonight" aria-labelledby="tonight-title" className="border-t border-snow/10 py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="rounded-[2rem] border border-brass/40 p-1.5">
-          <div className="rounded-[1.6rem] border border-brass/20 bg-booth px-4 py-12 sm:px-8 sm:py-14">
+        <div className="rounded-[2rem] border border-cobalt/40 p-1.5">
+          <div className="rounded-[1.6rem] border border-cobalt/20 bg-ink px-4 py-12 sm:px-8 sm:py-14">
             <div className="mx-auto max-w-2xl text-center">
               <p className="deco-rule font-type text-xs uppercase tracking-[0.3em] sm:text-sm">
                 <span className="shrink-0">{day ? `${day} night` : "Tonight"}</span>
@@ -55,15 +55,15 @@ export function TonightsMenu() {
               <h2 id="tonight-title" className="mt-4 font-display text-5xl sm:text-6xl">
                 Tonight&apos;s Menu
               </h2>
-              <p className="mt-4 text-lg leading-relaxed text-parchment">
+              <p className="mt-4 text-lg leading-relaxed text-mist">
                 The menu changes every night: one protein, one sandwich, one dessert and a drink of the
                 day, from 5pm.
               </p>
               <p aria-live="polite" className="mt-5 font-type text-sm">
                 {isExample ? (
-                  <span className="rounded-full border border-ember/50 px-3 py-1 text-ember">Example menu</span>
+                  <span className="rounded-full border border-sky/50 px-3 py-1 text-sky">Example menu</span>
                 ) : (
-                  <span className="rounded-full border border-brass/50 px-3 py-1 text-brass">
+                  <span className="rounded-full bg-cobalt px-3 py-1 font-bold text-white">
                     Updated {clock.format(saved.updatedAt)} ET
                   </span>
                 )}
@@ -74,7 +74,7 @@ export function TonightsMenu() {
               {slots.map((slot) => {
                 const special = specials[slot.id];
                 return (
-                  <li key={slot.id} className="flex flex-col overflow-hidden rounded-3xl border border-cream/10 bg-night">
+                  <li key={slot.id} className="flex flex-col overflow-hidden rounded-3xl border border-snow/10 bg-navy">
                     <div className="grain relative aspect-[4/3]">
                       <Image
                         src={slot.photo.src}
@@ -84,23 +84,23 @@ export function TonightsMenu() {
                         className="object-cover"
                       />
                       {!isExample && (
-                        <span className="absolute bottom-2 left-2 rounded-full bg-night/80 px-2.5 py-1 font-type text-[0.7rem] text-parchment">
+                        <span className="absolute bottom-2 left-2 rounded-full bg-navy/80 px-2.5 py-1 font-type text-[0.7rem] text-mist">
                           Photo from a past night
                         </span>
                       )}
                     </div>
                     <div className="flex flex-1 flex-col p-5">
                       <div className="flex items-center justify-between gap-2">
-                        <h3 className="font-type text-xs font-bold uppercase tracking-[0.2em] text-brass">{slot.label}</h3>
+                        <h3 className="font-type text-xs font-bold uppercase tracking-[0.2em] text-sky">{slot.label}</h3>
                         {isExample && (
-                          <span className="shrink-0 rounded-full bg-ember/15 px-2 py-0.5 font-type text-[0.7rem] font-bold uppercase tracking-wider text-ember">
+                          <span className="shrink-0 rounded-full bg-sky/15 px-2 py-0.5 font-type text-[0.7rem] font-bold uppercase tracking-wider text-sky">
                             Example
                           </span>
                         )}
                       </div>
                       <p className="mt-3 font-display text-3xl leading-tight break-words">{special.name}</p>
-                      {special.detail && <p className="mt-2 leading-relaxed break-words text-parchment">{special.detail}</p>}
-                      <p className="mt-auto border-t border-cream/10 pt-4 text-sm text-parchment/80 italic">{slot.rule}</p>
+                      {special.detail && <p className="mt-2 leading-relaxed break-words text-mist">{special.detail}</p>}
+                      <p className="mt-auto border-t border-snow/10 pt-4 text-sm text-mist/80 italic">{slot.rule}</p>
                     </div>
                   </li>
                 );
@@ -108,8 +108,8 @@ export function TonightsMenu() {
             </ul>
 
             <div className="mt-10 flex flex-col items-center gap-4 text-center">
-              <p className="max-w-md text-parchment">
-                <span className="font-bold text-cream">The team updates this in a minute from a phone.</span> Try it
+              <p className="max-w-md text-mist">
+                <span className="font-bold text-snow">The team updates this in a minute from a phone.</span> Try it
                 yourself:
               </p>
               <div className="flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
@@ -117,7 +117,7 @@ export function TonightsMenu() {
                   type="button"
                   aria-haspopup="dialog"
                   onClick={openEditor}
-                  className="rounded-full bg-brass px-7 py-3.5 text-lg font-bold text-night transition-colors hover:bg-cream"
+                  className="rounded-full bg-cobalt px-7 py-3.5 text-lg font-bold text-white transition-colors hover:bg-cobalt-dark"
                 >
                   Update tonight&apos;s menu
                 </button>
@@ -125,7 +125,7 @@ export function TonightsMenu() {
                   <button
                     type="button"
                     onClick={reset}
-                    className="rounded-full border border-cream/25 px-7 py-3.5 text-lg font-bold transition-colors hover:border-cream"
+                    className="rounded-full border border-snow/25 px-7 py-3.5 text-lg font-bold transition-colors hover:border-snow"
                   >
                     Back to the example
                   </button>

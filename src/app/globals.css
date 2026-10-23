@@ -1,17 +1,16 @@
 @import "tailwindcss";
 
-/* A dim cocktail den: near-black wood, cream menu card, brass lamp light, plus the cobalt from
-   the Whoopsie's logo for small accents. */
+/* Brand colors only, sampled from the Whoopsie's logo: navy #000030, cobalt #0070D0 and white.
+   Everything else is a tint or shade of those, kept dim for the cocktail-den mood. */
 @theme {
-  --color-night: #120c09;
-  --color-booth: #1c140f;
-  --color-oak: #2b1f17;
-  --color-cream: #f3e7cd;
-  --color-parchment: #c9b795;
-  --color-brass: #d9a648;
-  --color-brass-dark: #b8862e;
-  --color-ember: #e0765a;
-  --color-cobalt: #4f9be6;
+  --color-navy: #00002e;
+  --color-ink: #080c45;
+  --color-cobalt: #0070d0;
+  --color-cobalt-dark: #005cb0;
+  /* Cobalt lightened for small text on navy: the logo cobalt itself is 4.1:1 there, below AA. */
+  --color-sky: #6cb2f2;
+  --color-snow: #f5f7ff;
+  --color-mist: #b9c3ea;
 }
 
 /* `inline` so utilities reference the next/font variables directly rather than resolving them on :root. */
@@ -28,15 +27,15 @@ html {
 }
 
 body {
-  background: var(--color-night);
-  color: var(--color-cream);
+  background: var(--color-navy);
+  color: var(--color-snow);
 }
 
-/* Lamp glow: a warm pool of light at the top of a section, fading into the dark. */
+/* Lamp glow: a pool of cobalt light at the top of a section, fading into the navy. */
 .bg-lamp {
   background:
-    radial-gradient(ellipse 70% 55% at 50% 0%, rgb(217 166 72 / 0.16), transparent 70%),
-    var(--color-night);
+    radial-gradient(ellipse 70% 55% at 50% 0%, rgb(0 112 208 / 0.3), transparent 70%),
+    var(--color-navy);
 }
 
 /* Film grain over the photos so they sit in the room instead of on top of it. */
@@ -55,7 +54,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: var(--color-brass);
+  color: var(--color-sky);
 }
 .deco-rule::before,
 .deco-rule::after {

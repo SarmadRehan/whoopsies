@@ -7,7 +7,7 @@ const links = [
 
 export function Follow() {
   return (
-    <section id="follow" aria-labelledby="follow-title" className="border-t border-cream/10 bg-booth py-20 sm:py-24">
+    <section id="follow" aria-labelledby="follow-title" className="border-t border-snow/10 bg-ink py-20 sm:py-24">
       <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
         <p className="deco-rule font-type text-xs uppercase tracking-[0.3em] sm:text-sm">
           <span className="shrink-0">Follow along</span>
@@ -23,11 +23,11 @@ export function Follow() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block h-full rounded-3xl border border-cream/15 p-7 text-left transition-colors hover:border-brass"
+                className="group block h-full rounded-3xl border border-snow/15 p-7 text-left transition-colors hover:border-sky"
               >
-                <span className="font-type text-xs font-bold uppercase tracking-[0.25em] text-brass">{link.label}</span>
-                <span className="mt-2 block font-display text-2xl break-words group-hover:text-brass sm:text-3xl">{link.handle}</span>
-                <span className="mt-2 block text-parchment">{link.note}</span>
+                <span className="font-type text-xs font-bold uppercase tracking-[0.25em] text-sky">{link.label}</span>
+                <span className="mt-2 block font-display text-2xl break-words group-hover:text-sky sm:text-3xl">{link.handle}</span>
+                <span className="mt-2 block text-mist">{link.note}</span>
               </a>
             </li>
           ))}

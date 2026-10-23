@@ -6,7 +6,7 @@ import { SectionHeading } from "./SectionHeading";
 
 export function Regulars() {
   return (
-    <section id="regulars" aria-labelledby="regulars-title" className="border-t border-cream/10 bg-booth py-20 sm:py-24">
+    <section id="regulars" aria-labelledby="regulars-title" className="border-t border-snow/10 bg-ink py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeading
           id="regulars-title"
@@ -17,7 +17,7 @@ export function Regulars() {
 
         <div className="mt-14 grid items-center gap-10 lg:grid-cols-2">
           <figure>
-            <div className="grain relative aspect-square overflow-hidden rounded-3xl border border-cream/10">
+            <div className="grain relative aspect-square overflow-hidden rounded-3xl border border-snow/10">
               <Image
                 src={regularsImage.src}
                 alt={regularsImage.alt}
@@ -26,16 +26,16 @@ export function Regulars() {
                 className="object-cover"
               />
             </div>
-            <figcaption className="mt-3 text-center font-type text-xs uppercase tracking-[0.2em] text-parchment">
+            <figcaption className="mt-3 text-center font-type text-xs uppercase tracking-[0.2em] text-mist">
               {regularsImage.caption}
             </figcaption>
           </figure>
 
-          <ul className="divide-y divide-cream/10 border-y border-cream/10">
+          <ul className="divide-y divide-snow/10 border-y border-snow/10">
             {regulars.map((item) => (
               <li key={item.title} className="py-7">
                 <h3 className="font-display text-3xl">{item.title}</h3>
-                <p className="mt-2 text-lg leading-relaxed text-parchment">{item.text}</p>
+                <p className="mt-2 text-lg leading-relaxed text-mist">{item.text}</p>
               </li>
             ))}
           </ul>
