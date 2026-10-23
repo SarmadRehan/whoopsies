@@ -9,13 +9,17 @@ Live demo: https://sarmadrehan.github.io/whoopsies/
 ## The main feature: Tonight's menu
 
 Whoopsie's menu changes every night, so the page leads with a **Tonight's menu** section: cards for
-the protein, sandwich, dessert and drink of the day. It ships with example specials (marked
-"Example") and an **Update tonight's menu** button that opens the phone-sized form the team would
-use.
+the protein, sandwich, dessert and drink of the day.
+
+- **Protein:** real. It follows their weekly schedule and shows tonight's protein for the current
+  weekday in Atlanta time, with the whole week listed below the cards.
+- **Sandwich, dessert and drink:** examples (marked "Example"), because they change nightly and
+  aren't published anywhere.
+- **Update tonight's menu** opens the phone-sized form the team would use to post the real ones.
 
 In this demo the update is saved to the visitor's own browser only (`localStorage`, see
 `src/lib/tonightStorage.ts`), so it can be tried without affecting anyone else, and "Back to the
-example" clears it. A real launch would save it to a small backend behind a staff login so every
+default" clears it. A real launch would save it to a small backend behind a staff login so every
 guest sees the same menu.
 
 ## Stack
@@ -55,8 +59,11 @@ Every fact comes from the verified table in the demo brief (checked 2026-10-23):
 | Vintage and thrift-store decor, dim lighting, about 40 seats | Atlanta Magazine |
 | Instagram @whooopsies_place, Facebook page "Whoopsie's" | Google Maps, Facebook |
 
-- **Example specials**: Blue Plate pork chop (with succotash, squash casserole and cornbread),
-  po'boy, pecan pie and Improved Japanese Slipper. Each one is named in a Whoopsie's Instagram
+- **Weekly proteins**: the "PROTEIN" menu board pinned on their Instagram (posted Nov 2024; prices
+  left off): Sunday fish, Monday crispy chicken thighs, Wednesday vegetarian, Thursday pork chop,
+  Friday and Saturday prime rib. Tuesday is oxtail, from their "Oxtail Tuesdays are now a thing"
+  post (Oct 6, 2026), which replaced the board's blue plate. Michelin also names prime rib.
+- **Example specials**: po'boy, pecan pie and Improved Japanese Slipper. Each one is named in a Whoopsie's Instagram
   caption and matches its card photo. The Manhattan and Cosmopolitan in "The Regulars" are from the
   dishes named on Google Maps.
 - **Hours**: OpenStreetMap still lists older hours (Monday 9am–midnight, closed Tuesday and

@@ -53,6 +53,9 @@ export function phoneHref(phone: string): string {
 
 export type Photo = { src: StaticImageData; alt: string; caption?: string };
 
+/** A slot photo, plus the dish it shows so the card can say so when tonight's dish differs. */
+export type SlotPhoto = Photo & { pictured: string };
+
 // Photos come only from Whoopsie's own Instagram posts (most credit the photographer @post_neopet).
 export const heroImage: Photo = {
   src: canadianClassic,
@@ -73,20 +76,20 @@ export type Special = { name: string; detail?: string };
 export type Slot = {
   id: SlotId;
   label: string;
-  /** What's true of the slot every night, from the brief. */
+  /** What's true of the slot every night. */
   rule: string;
-  photo: Photo;
+  photo: SlotPhoto;
 };
 
 export const slots: Slot[] = [
   {
     id: "protein",
     label: "Protein of the day",
-    // Michelin Guide: a daily protein, prime rib on Fridays and Saturdays.
-    rule: "One main plate a night. Prime rib on Fridays and Saturdays.",
+    rule: "A set protein for each night of the week.",
     photo: {
       src: bluePlate,
       alt: "A turquoise cafeteria tray with a seared pork chop, succotash, squash casserole and a wedge of cornbread",
+      pictured: "Blue Plate pork chop",
     },
   },
   {
@@ -97,6 +100,7 @@ export const slots: Slot[] = [
     photo: {
       src: poboy,
       alt: "A po'boy on a soft roll with lettuce and tomato, cut in half, with a deviled egg on the plate",
+      pictured: "Po'boy",
     },
   },
   {
@@ -107,6 +111,7 @@ export const slots: Slot[] = [
     photo: {
       src: pecanPie,
       alt: "A slice of pecan pie topped with whipped cream and shaved chocolate on a cream plate",
+      pictured: "Pecan pie",
     },
   },
   {
@@ -117,14 +122,30 @@ export const slots: Slot[] = [
     photo: {
       src: japaneseSlipper,
       alt: "A glowing green cocktail in a tall coupe on a dark wooden bar",
+      pictured: "Improved Japanese Slipper",
     },
   },
 ];
 
-// Example specials, marked "example" on the page. Each matches its photo and is named in
-// Whoopsie's own Instagram captions; the real list is whatever the team posts tonight.
-export const exampleSpecials: Record<SlotId, Special> = {
-  protein: { name: "Blue Plate pork chop", detail: "With succotash, squash casserole and cornbread." },
+export type WeekdayProtein = { day: string; protein: Special };
+
+// The protein runs on a weekly schedule, so it's real rather than an example. Source: the
+// "PROTEIN" menu board pinned on their Instagram (Nov 2024; prices left off). Tuesday's blue plate
+// became oxtail in their "Oxtail Tuesdays are now a thing" post (Oct 6, 2026). Prime rib on Friday
+// and Saturday also matches the Michelin Guide. Index 0 is Sunday, like Date#getDay.
+export const weeklyProteins: WeekdayProtein[] = [
+  { day: "Sunday", protein: { name: "Fish", detail: "Sunday Supper." } },
+  { day: "Monday", protein: { name: "Crispy chicken thighs" } },
+  { day: "Tuesday", protein: { name: "Oxtail", detail: "Oxtail Tuesdays." } },
+  { day: "Wednesday", protein: { name: "Vegetarian" } },
+  { day: "Thursday", protein: { name: "Pork chop" } },
+  { day: "Friday", protein: { name: "Prime rib" } },
+  { day: "Saturday", protein: { name: "Prime rib" } },
+];
+
+// The rest change nightly with no public list, so these are examples, marked on the page. Each
+// matches its photo and is named in Whoopsie's own Instagram captions.
+export const exampleSpecials: Record<Exclude<SlotId, "protein">, Special> = {
   sandwich: { name: "Po'boy" },
   dessert: { name: "Pecan pie", detail: "With whipped cream and shaved chocolate." },
   drink: { name: "Improved Japanese Slipper" },
