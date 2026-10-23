@@ -63,6 +63,9 @@ Every fact comes from the verified table in the demo brief (checked 2026-10-23):
   left off): Sunday fish, Monday crispy chicken thighs, Wednesday vegetarian, Thursday pork chop,
   Friday and Saturday prime rib. Tuesday is oxtail, from their "Oxtail Tuesdays are now a thing"
   post (Oct 6, 2026), which replaced the board's blue plate. Michelin also names prime rib.
+- **Snack tray and "On the Menu Now"**: their "current Cold/Hot Menu" board posted on Instagram
+  (Aug 20, 2026), prices left off. The snack tray merges that board (deviled eggs, pimento cheese,
+  pickles, chow chow, toast) with the Michelin Guide's version, which adds pork terrine.
 - **Example specials**: po'boy, pecan pie and Improved Japanese Slipper. Each one is named in a Whoopsie's Instagram
   caption and matches its card photo. The Manhattan and Cosmopolitan in "The Regulars" are from the
   dishes named on Google Maps.

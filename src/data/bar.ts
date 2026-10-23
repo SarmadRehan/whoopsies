@@ -153,19 +153,36 @@ export const exampleSpecials: Record<Exclude<SlotId, "protein">, Special> = {
 
 export const specialLimits = { name: 48, detail: 110 } as const;
 
-// Michelin Guide (snack tray, rotating cold and hot dishes); The Infatuation (classic cocktails);
-// cocktail names from the dishes named on Google Maps.
+// Snack tray: their Cold/Hot menu board on Instagram (Aug 2026) merged with the Michelin Guide's
+// version, which adds pork terrine. Classic cocktails: The Infatuation; cocktail names from the
+// dishes named on Google Maps.
 export const regulars = [
   {
     title: "The snack tray",
-    text: "Pimento cheese, chow chow, pickled vegetables and pork terrine, served on a cafeteria tray.",
+    text: "Deviled eggs, pimento cheese, chow chow, assorted pickles, pork terrine and toast, served on a cafeteria tray.",
   },
   {
     title: "Classic cocktails",
     text: "Classic cocktails, such as a Manhattan or a Cosmopolitan.",
   },
-  {
-    title: "Cold and hot dishes",
-    text: "A short list of cold and hot plates alongside the nightly specials. It rotates, so ask what's on.",
-  },
 ];
+
+export type Dish = { name: string; detail: string };
+
+// The "current Cold/Hot Menu" board posted on their Instagram (Aug 20, 2026), prices left off.
+// The snack tray is on the board too; it's featured above instead of repeated here.
+export const currentMenu: { cold: Dish[]; hot: Dish[] } = {
+  cold: [
+    { name: "Arugula salad", detail: "Seasonal fruit, chèvre, shallot, sunflower seeds, champagne vinaigrette" },
+    { name: "Wedge salad", detail: "Iceberg, Roquefort, tomato, cucumber, shallot, breadcrumb, Catalina" },
+    { name: "Country ham & melon", detail: "Country ham, South Georgia melon, grana padano, herbs, peanut oil, lime" },
+    { name: "Jumbo shrimp cocktail", detail: "Gulf of Mexico shrimp, extra-strong cocktail sauce" },
+  ],
+  hot: [
+    { name: "Pommes aligot", detail: "Gruyère, jus" },
+    { name: "Chicken wings", detail: "Gay Cowboy hot sauce, ranch" },
+    { name: "Creamed field peas", detail: "Double cream, Vidalia onion, dill, lemon" },
+    { name: "Squash casserole", detail: "Squash, Vidalia onions, Gruyère" },
+    { name: "Miso eggplant", detail: "Miso, mint, cilantro, peanuts" },
+  ],
+};
